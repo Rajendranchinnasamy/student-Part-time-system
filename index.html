@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>チンナサミ・ラジェンドラン ポートフォリオ / Portfolio of Chinnasamy Rajendran</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #f7f7f7;
+      color: #333;
+    }
+
+    nav {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    nav button {
+      background: #00bcd4;
+      border: none;
+      color: white;
+      padding: 12px 18px;
+      margin: 0 8px;
+      font-size: 1em;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+    }
+
+    nav button:hover {
+      background: #0097a7;
+    }
+
+    nav button.active {
+      background: #007c91;
+    }
+
+    section {
+      display: none;
+      background: white;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+
+    section.active {
+      display: block;
+    }
+
+    h1, h2 {
+      color: #00bcd4;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    h3 {
+      color: #007c91;
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    p {
+      margin-bottom: 10px;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    img.profile-image {
+      display: block;
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      border: 3px solid #00bcd4;
+      object-fit: cover;
+      margin: 20px auto;
+    }
+
+    .bottom-button {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .bottom-button button {
+      background: #007c91;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      font-size: 1em;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .bottom-button button:hover {
+      background: #005f73;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      max-width: 400px;
+      margin: 20px auto;
+      background: #eee;
+      border-radius: 8px;
+    }
+
+    ul li {
+      padding: 12px;
+      font-weight: bold;
+      border-bottom: 1px solid #ccc;
+    }
+
+    ul li:last-child {
+      border-bottom: none;
+    }
+
+    img.coming-soon, img.growth-image {
+      display: block;
+      margin: 20px auto;
+      max-width: 300px;
+      opacity: 0.9;
+      border-radius: 8px;
+    }
+
+    #myproject ul {
+      max-width: 600px;
+      margin: 20px auto;
+      background: #e3f2fd;
+      border-radius: 8px;
+      padding: 20px;
+      list-style-type: disc;
+      list-style-position: inside;
+      font-weight: normal;
+      color: #0d47a1;
+    }
+
+    #myproject ul li {
+      border: none;
+      font-weight: normal;
+      margin-bottom: 10px;
+    }
+
+    #myproject button {
+      background: #007c91;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      font-size: 1em;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      display: block;
+      margin: 30px auto 0 auto;
+      max-width: 150px;
+    }
+
+    #myproject button:hover {
+      background: #005f73;
+    }
+
+    /* Responsive for small screens */
+    @media (max-width: 600px) {
+      nav button {
+        margin: 6px 4px;
+        padding: 10px 14px;
+        font-size: 0.95em;
+      }
+
+      img.profile-image {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <!-- data-targetで対応セクションを指定 -->
+    <button data-target="home" onclick="showSection('home')" class="active">ホーム / Home</button>
+    <button data-target="projects" onclick="showSection('projects')">プロジェクト / Projects</button>
+    <button data-target="services" onclick="showSection('services')">サービス / Services</button>
+    <button data-target="contact" onclick="showSection('contact')">お問い合わせ / Contact</button>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home" class="active">
+    <h1>チンナサミ・ラジェンドラン<br><small>Chinnasamy Rajendran</small></h1>
+    <p>インド・タミルナードゥ出身のWeb開発愛好家です。現在、日本で学生としてWeb開発を勉強しています。<br>I am a web development enthusiast from Tamil Nadu, India. Currently, I am a student studying web development in Japan.</p>
+    <img src="../mysite/images/my-photo.jpeg" alt="Chinnasamy Rajendran" class="profile-image" />
+    <p>以前、Cognizant Technology Solutions India Pvt LtdでIT関連の経験を積みました。Web開発に触れることで興味を持ち、現在はHTML、CSS、JavaScript、PHPを使ってフルスタック開発を独学で学んでいます。<br>
+       (Previously worked at Cognizant Technology Solutions India Pvt Ltd gaining IT experience. Interested in web development and currently self-learning full-stack development with HTML, CSS, JavaScript, and PHP.)
+    </p>
+
+    <div class="bottom-button">
+      <button onclick="openMyProject()">私の現在のプロジェクト / My Current Project</button>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>プロジェクト - 近日公開予定<br>Projects - Coming Soon</h2>
+    <p>
+      現在準備中ですが、将来的にアップデートを予定しています。<br />
+      完成次第、こちらでお知らせいたしますので、ぜひまたチェックしてください！<br><br>
+      ( Currently under preparation with future updates planned.<br>
+      We will notify you here as soon as it's ready, so please check back! )
+    </p>
+    <img src="../mysite/images/coming-soon-.jpg" alt="Coming Soon" class="coming-soon" />
+  </section>
+
+  <!-- Services Section -->
+  <section id="services">
+    <h2>サービス / Services</h2>
+    <p>現在、学生としてWeb開発に取り組んでおり、実践的なスキルを磨いています。<br>
+       Currently studying web development as a student, improving practical skills.
+    </p>
+    <p>独学でプロジェクトを作成しながら、以下の分野を中心に学習しています:<br>
+       Self-learning by creating projects, focusing on the following areas:
+    </p>
+    <ul>
+      <li>HTML、CSS、JavaScriptを使ったフロントエンド開発 / Frontend development using HTML, CSS, JavaScript</li>
+      <li>PHPを使ったバックエンドの基礎 / Basic backend using PHP</li>
+      <li>モバイル対応デザイン（レスポンシブWebデザイン） / Mobile-friendly responsive web design</li>
+      <li>実用的なポートフォリオの作成と公開 / Creating and publishing practical portfolios</li>
+    </ul>
+    <p>これらのスキルを実際のプロジェクトに応用しながら、常に成長を目指しています。<br>
+       Applying these skills to real projects while continuously aiming for growth.
+    </p>
+    <img src="../mysite/images/growth-see-the-future.jpg" alt="Growth" class="growth-image" />
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>お問い合わせ / Contact</h2>
+    <p>私のページをご覧いただきありがとうございます。<br>Thank you for visiting my page.</p>
+    <ul>
+      <li>名前 / Name: チンナサミ・ラジェンドラン</li>
+      <li>メール / Email: Rajendran2190@gmail.com</li>
+    </ul>
+    <p>ご質問等がありましたら、お気軽にメールでご連絡ください。<br>If you have any questions, please feel free to contact me by email.</p>
+  </section>
+
+  <!-- My Project Section -->
+  <section id="myproject" style="display:none;">
+    <h2>私の現在のプロジェクト / My Current Project</h2>
+    <p>
+      日本では学生が1週間に28時間までしか働けない規則があります。このルールを守るために、自分の労働時間をスマホで簡単に記録できるウェブアプリを作成しました。<br>
+      In Japan, students are allowed to work only up to 28 hours per week. To comply with this rule, I developed a web app to easily record working hours on a smartphone.
+    </p>
+
+    <h3>① ユーザー登録（新規学生） / User Registration (New Student)</h3>
+    <p>
+      学生はまず自分の情報（氏名、メール、パスワードなど）を入力して登録します。登録後は、個別アカウントでログインし、労働記録を安全に保存できます。<br>
+      Students first enter their information (name, email, password, etc.) to register. After registration, they can log in with their account and safely save their work records.
+    </p>
+    <img src="../mysite/images/student-Register-Form.png" alt="ユーザー登録画面 / User Registration Screen" class="coming-soon" />
+
+    <h3>② ログイン画面 / Login Screen</h3>
+    <p>
+      登録が完了した学生は、メールアドレスとパスワードでログインできます。ログイン後は自分専用のページで労働時間を記録・確認できます。<br>
+      Registered students can log in using their email and password. After login, they can record and check their working hours on their personal page.
+    </p>
+    <img src="../mysite/images/student-Login.png" alt="ログイン画面 / Login Screen" class="coming-soon" />
+
+    <h3>③ 学生ダッシュボード / Student Dashboard</h3>
+    <p>
+      ログイン後、学生は自分専用のダッシュボードに移動します。ここでは、今週の労働時間の合計、過去の記録、警告メッセージなどを確認できます。また、データ入力ページやカレンダー表示ページへのリンクもあります。<br>
+      After logging in, students move to their dashboard where they can check total hours worked this week, past records, warnings, and links to data entry and calendar pages.
+    </p>
+    <img src="../mysite/images/student-dashboard.png" alt="学生ダッシュボード画面 / Student Dashboard Screen" class="coming-soon" />
+
+    <h3>④ カレンダー表示 / Calendar View</h3>
+    <p>
+      このページでは、現在の年の各月ごとの労働記録を確認できます。学生は月を選択して、その月に働いた日と時間の合計を確認できます。28時間を超えた週には警告が表示されます。<br>
+      This page shows monthly work records for the current year. Students can select a month to see days worked and total hours. Warnings appear if weekly hours exceed 28.
+    </p>
+    <img src="../mysite/images/show-calendar-and-workdetails.png" alt="カレンダー画面 / Calendar Screen" class="coming-soon" />
+
+    <h3>⑤ 教師登録 / Teacher Registration</h3>
+    <p>
+      管理者や教師は、専用ページから自分の情報（氏名、メール、パスワード）を登録します。登録後は管理者として学生の労働記録を確認できます。<br>
+      Administrators and teachers register their info (name, email, password) on a dedicated page. After registration, they can monitor students’ work records.
+    </p>
+    <img src="../mysite/images/Teacher-Registration.png" alt="教師登録画面 / Teacher Registration Screen" class="coming-soon" />
+
+    <h3>⑥ 教師ログイン / Teacher Login</h3>
+    <p>
+      登録済みの教師はメールアドレスとパスワードでログインできます。ログイン後はダッシュボードに移動し、登録された学生の労働時間を週ごとに確認可能です。<br>
+      Registered teachers can log in with email and password. After login, they access a dashboard showing students’ weekly work hours.
+    </p>
+    <img src="../mysite/images/Teacher-Login.png" alt="教師ログイン画面 / Teacher Login Screen" class="coming-soon" />
+
+    <h3>⑦ 教師ダッシュボード / Teacher Dashboard</h3>
+    <p>
+      教師はこのダッシュボードを通じて、学生ごとの労働記録を確認したり、週ごとに28時間を超えていないかを監視することができます。必要に応じてCSV形式でエクスポートも可能です。<br>
+      Teachers use this dashboard to check individual student records and monitor if weekly hours exceed 28. Data export to CSV is also available.
+    </p>
+    <img src="../mysite/images/teacher-dashboard.png" alt="教師ダッシュボード画面 / Teacher Dashboard Screen" class="coming-soon" />
+
+    <h3>⑧ 開発中 / Under Development</h3>
+    <p>
+      このページは現在開発中です。完成次第、最新情報をここに追加する予定です。もうしばらくお待ちください。<br>
+      This page is currently under development. We plan to add updates here once completed. Please wait a little longer.
+    </p>
+    <img src="../mysite/images/under-process.jpg" alt="開発中ページ / Under Development" class="coming-soon" />
+
+    <h3>📌 主な機能（主要機能の紹介） / Main Features</h3>
+    <p>
+      このウェブアプリは学生が簡単に労働時間を記録し、日本の規則（週28時間以内）を守るために役立ちます。<br>
+      This web app helps students easily record work hours and comply with Japanese regulations (within 28 hours/week).
+    </p>
+    <ul>
+      <li>ユーザー登録・ログイン機能 / User registration and login</li>
+      <li>学生の労働時間管理・表示 / Student work hour management and display</li>
+      <li>教師の管理用ダッシュボード / Teacher’s admin dashboard</li>
+      <li>カレンダー表示での労働時間確認 / Work hour confirmation via calendar view</li>
+      <li>CSVデータのエクスポート機能 / CSV data export</li>
+    </ul>
+
+    <div class="bottom-button">
+      <button onclick="closeMyProject()">戻る / Back</button>
+    </div>
+  </section>
+
+  <script>
+    // セクションの切り替え関数
+    function showSection(id) {
+      // 全セクションを非表示
+      document.querySelectorAll('section').forEach(section => {
+        section.classList.remove('active');
+        section.style.display = 'none';
+      });
+      // 目的のセクションだけ表示
+      const target = document.getElementById(id);
+      if (target) {
+        target.classList.add('active');
+        target.style.display = 'block';
+      }
+
+      // ナビボタンのアクティブ切り替え
+      document.querySelectorAll('nav button').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.dataset.target === id) {
+          btn.classList.add('active');
+        }
+      });
+    }
+
+    // 「私の現在のプロジェクト」表示用
+    function openMyProject() {
+      // ホームを非表示
+      const home = document.getElementById('home');
+      if (home) {
+        home.style.display = 'none';
+        home.classList.remove('active');
+      }
+      // マイプロジェクト表示
+      const myproject = document.getElementById('myproject');
+      if (myproject) {
+        myproject.style.display = 'block';
+        myproject.classList.add('active');
+      }
+      // ナビボタンのアクティブ解除
+      document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active'));
+    }
+
+    // マイプロジェクト閉じてホームへ戻る
+    function closeMyProject() {
+      const myproject = document.getElementById('myproject');
+      if (myproject) {
+        myproject.style.display = 'none';
+        myproject.classList.remove('active');
+      }
+      const home = document.getElementById('home');
+      if (home) {
+        home.style.display = 'block';
+        home.classList.add('active');
+      }
+      // ナビボタンのホームをアクティブに戻す
+      document.querySelectorAll('nav button').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.dataset.target === 'home') {
+          btn.classList.add('active');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
