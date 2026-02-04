@@ -180,10 +180,9 @@
 <body>
 
   <nav>
-    <!-- data-targetで対応セクションを指定 -->
     <button data-target="home" onclick="showSection('home')" class="active">ホーム / Home</button>
     <button data-target="projects" onclick="showSection('projects')">プロジェクト / Projects</button>
-    <button data-target="services" onclick="showSection('services')">サービス / Services</button>
+    <button data-target="plan" onclick="showSection('plan')">将来計画 / Future Plan</button>
     <button data-target="contact" onclick="showSection('contact')">お問い合わせ / Contact</button>
   </nav>
 
@@ -213,23 +212,21 @@
     <img src="./images/coming-soon-.jpg" alt="Coming Soon" class="coming-soon" />
   </section>
 
-  <!-- Services Section -->
-  <section id="services">
-    <h2>サービス / Services</h2>
-    <p>現在、学生としてWeb開発に取り組んでおり、実践的なスキルを磨いています。<br>
-       Currently studying web development as a student, improving practical skills.
-    </p>
-    <p>独学でプロジェクトを作成しながら、以下の分野を中心に学習しています:<br>
-       Self-learning by creating projects, focusing on the following areas:
-    </p>
-    <ul>
-      <li>HTML、CSS、JavaScriptを使ったフロントエンド開発 / Frontend development using HTML, CSS, JavaScript</li>
-      <li>PHPを使ったバックエンドの基礎 / Basic backend using PHP</li>
-      <li>モバイル対応デザイン（レスポンシブWebデザイン） / Mobile-friendly responsive web design</li>
-      <li>実用的なポートフォリオの作成と公開 / Creating and publishing practical portfolios</li>
-    </ul>
-    <p>これらのスキルを実際のプロジェクトに応用しながら、常に成長を目指しています。<br>
-       Applying these skills to real projects while continuously aiming for growth.
+  <!-- Plan Section (formerly Services) -->
+  <section id="plan">
+    <h2>将来計画 / Future Plan</h2>
+    <p>
+      I am currently a student practicing web development.<br>
+      現在、私は学生としてWeb開発の練習をしています。<br><br>
+
+      This project is made for learning and improving my skills.<br>
+      このプロジェクトは、学習とスキル向上のために作成しました。<br><br>
+
+      I am interested in building real-world applications.<br>
+      実際の現場で使われるアプリケーションの開発に興味があります。<br><br>
+
+      My future goal is to work on India–Japan collaborative projects.<br>
+      将来の目標は、インドと日本の共同プロジェクトに携わることです。
     </p>
     <img src="./images/growth-see-the-future.jpg" alt="Growth" class="growth-image" />
   </section>
@@ -362,69 +359,44 @@
   </section>
 
   <script>
-    // セクションの切り替え関数
     function showSection(id) {
-      // 全セクションを非表示
       document.querySelectorAll('section').forEach(section => {
         section.classList.remove('active');
         section.style.display = 'none';
       });
-      // 目的のセクションだけ表示
       const target = document.getElementById(id);
       if (target) {
         target.classList.add('active');
         target.style.display = 'block';
       }
 
-      // ナビボタンのアクティブ切り替え
       document.querySelectorAll('nav button').forEach(btn => {
         btn.classList.remove('active');
-        if (btn.dataset.target === id) {
-          btn.classList.add('active');
-        }
+        if (btn.dataset.target === id) btn.classList.add('active');
       });
     }
 
-    // 「私の現在のプロジェクト」表示用
     function openMyProject() {
-      // ホームを非表示
-      const home = document.getElementById('home');
-      if (home) {
-        home.style.display = 'none';
-        home.classList.remove('active');
-      }
-      // マイプロジェクト表示
+      document.getElementById('home').style.display = 'none';
+      document.getElementById('home').classList.remove('active');
       const myproject = document.getElementById('myproject');
-      if (myproject) {
-        myproject.style.display = 'block';
-        myproject.classList.add('active');
-      }
-      // ナビボタンのアクティブ解除
+      myproject.style.display = 'block';
+      myproject.classList.add('active');
       document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active'));
     }
 
-    // マイプロジェクト閉じてホームへ戻る
     function closeMyProject() {
       const myproject = document.getElementById('myproject');
-      if (myproject) {
-        myproject.style.display = 'none';
-        myproject.classList.remove('active');
-      }
+      myproject.style.display = 'none';
+      myproject.classList.remove('active');
       const home = document.getElementById('home');
-      if (home) {
-        home.style.display = 'block';
-        home.classList.add('active');
-      }
-      // ナビボタンのホームをアクティブに戻す
+      home.style.display = 'block';
+      home.classList.add('active');
       document.querySelectorAll('nav button').forEach(btn => {
         btn.classList.remove('active');
-        if (btn.dataset.target === 'home') {
-          btn.classList.add('active');
-        }
+        if (btn.dataset.target === 'home') btn.classList.add('active');
       });
     }
   </script>
 </body>
 </html>
-
-
